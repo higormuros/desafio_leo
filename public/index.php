@@ -2,6 +2,14 @@
 <html lang="pt-br">
 	<head>
         <?php include "head-links.php"; ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(e) {
+                if(localStorage.getItem("visto")!=="sim"){
+                    localStorage.setItem("visto", "sim");
+                    showModal();
+                }
+            });
+        </script>
     </head>
 
 	<body style="font-family: 'Roboto', sans-serif;">
