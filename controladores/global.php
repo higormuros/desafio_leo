@@ -1,0 +1,3 @@
+<?php
+
+$diretorioModelos="../modelos/";

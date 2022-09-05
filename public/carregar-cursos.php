@@ -1,16 +1,7 @@
-
-
 <?php 
-$cursos=array(
-    "Excel",
-    "VBA",
-    "SQL",
-    "PHP",
-    "JS",
-    "Bootstrap",
-    "MariaDB"
-); //buscar no banco
 
+include "../controladores/selecionar.php";
+$cursos=$resultado;
 $numCurso=1;
 
 foreach($cursos as $curso){ 
@@ -22,13 +13,13 @@ foreach($cursos as $curso){
 
 
 <div class="col-md-3 mb-4 text-center">
-    <div class="card" style="width: 98;">
-        <img src="curso-img.jpg" class="card-img-top" alt="...">
+    <div class="card">
+        <img src="<?php echo $curso["imagem"]?>" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title"><?php echo $curso["titulo"]?></h5>
+            <p class="card-text"><?php echo $curso["descricao"]?></p>
             <div class="d-grid">
-                <a class="btn btn-success rounded-pill" onclick="showModal(1)" style="cursor:pointer;">VER CURSO</a>
+                <a class="btn btn-success rounded-pill" href="<?php echo "https://".$curso["link"]?>" target="_blank">VER CURSO</a>
             </div>
         </div>
     </div>
@@ -50,7 +41,7 @@ if($numCurso==1){
 ?>
 
     <div class="col-md-3 mb-4 text-center">
-        <div class="card bg-light py-5" style="width: 98%; height:100%">
+        <div class="card bg-light py-5" style="height:100%">
             <div class="card-body">
                 <div>
                     <span class="material-symbols-outlined text-secondary" style="font-size:100px">
